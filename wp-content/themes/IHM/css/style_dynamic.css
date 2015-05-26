@@ -1,0 +1,339 @@
+
+    /* Webkit */
+    ::selection {
+    background: #000000;
+    }
+    /* Gecko/Mozilla */
+    ::-moz-selection {
+    background: #000000;
+    }
+
+
+
+    .ajax_loader .pulse,
+    .ajax_loader .double_pulse .double-bounce1, .ajax_loader .double_pulse .double-bounce2,
+    .ajax_loader .cube,
+    .ajax_loader .rotating_cubes .cube1, .ajax_loader .rotating_cubes .cube2,
+    .ajax_loader .stripes > div,
+    .ajax_loader .wave > div,
+    .ajax_loader .two_rotating_circles .dot1, .ajax_loader .two_rotating_circles .dot2,
+    .ajax_loader .five_rotating_circles .container1 > div, .ajax_loader .five_rotating_circles .container2 > div, .ajax_loader .five_rotating_circles .container3 > div{
+    background-color: #c6c6c6;
+    }
+
+    body{
+    	    	    	font-family: 'Roboto', sans-serif;
+    	    	 color: #000000;     	 font-size: 18px;     	font-weight: 400;    }
+            body,
+		.wrapper,
+        .content,
+        .full_width,
+		.more_facts_holder,
+		.comment_holder .comment #respond textarea,
+		.comment_holder .comment #respond input[type='text'],
+		.content .container
+		{
+        	background-color:#ffffff;
+        }
+    
+
+
+
+
+
+
+
+.header_top{
+	background-color: rgba(134,31,193,1);
+}
+header.sticky .header_top{
+	background-color: rgba(134,31,193,0.7);
+}
+
+
+
+						.content{
+				margin-top: -80px;
+			}
+				
+	
+.logo_wrapper,
+.side_menu_button,
+.shopping_cart_inner
+{
+	height: 80px;
+}
+.content.content_top_margin{
+	margin-top: 80px !important;
+}
+
+header:not(.centered_logo) .header_fixed_right_area {
+    line-height: 80px;
+}
+
+<!---->
+<!--.drop_down .second,-->
+<!--.drop_down .second.bellow_header-->
+<!--{-->
+<!--	top: --><!--px;-->
+<!--}-->
+
+header.scrolled .logo_wrapper,
+header.scrolled .side_menu_button{
+	height: 80px;
+}
+
+header.scrolled nav.main_menu ul li a {
+	line-height: 80px;
+}
+
+header.scrolled .drop_down .second{
+	top: 80px;
+}
+
+header.sticky .logo_wrapper,
+header.sticky.centered_logo .logo_wrapper,
+header.sticky .side_menu_button,
+header.sticky .shopping_cart_inner
+	{
+	height: 80px !important;
+}
+
+header.sticky nav.main_menu > ul > li > a, 
+.light.sticky nav.main_menu > ul > li > a, 
+.light.sticky nav.main_menu > ul > li > a:hover, 
+.light.sticky nav.main_menu > ul > li.active > a, 
+.dark.sticky nav.main_menu > ul > li > a, 
+.dark.sticky nav.main_menu > ul > li > a:hover, 
+.dark.sticky nav.main_menu > ul > li.active > a {
+	line-height: 80px;
+}
+
+
+
+        header.fixed_hiding .q_logo a,
+        header.fixed_hiding .q_logo{
+            max-height: 56.5px;
+        }
+
+    @media only screen and (max-width: 1000px){
+        .q_logo a,.q_logo img{
+            height: 100px !important;
+        }
+    }   
+
+    @media only screen and (max-width: 480px){
+        .q_logo a,.q_logo img{
+            height: 100px !important;
+        }
+    }   
+
+nav.main_menu > ul > li > a{
+	line-height: 80px;
+}
+
+
+nav.main_menu > ul > li > a{
+	 color: #000000; 		 font-size: 15px;     		 font-weight: 300; 		}
+
+
+
+nav.main_menu ul li:hover a {
+	 color: #d22000; }
+
+		nav.main_menu ul li.active a {
+			color: #d22000		}
+	
+
+
+
+
+
+
+
+
+
+nav.mobile_menu ul li a:hover,
+nav.mobile_menu ul li.active > a,
+nav.mobile_menu ul li.current-menu-item > a{
+	color: #d22000;
+}
+
+
+
+
+
+h1,
+.title h1 {
+			font-size: 40px; 		font-style: normal; 	font-weight: 300;         text-transform: none; }
+h2,
+h2 a{
+			font-size: 24px; 			font-weight: 300;     	text-transform: none; }
+    p{
+    	color: #000000;    	    	font-size: 18px;    	line-height: 30px;    	    	font-weight: 400;    	    	    }
+    .filter_holder ul li span,
+    blockquote h5,
+    .q_social_icon_holder i.simple_social,
+    .header-widget.widget_nav_menu ul.menu li a,
+    .side_menu a,
+    .side_menu li,
+    .side_menu span,
+    .side_menu p,
+    .side_menu .widget.widget_rss li a.rsswidget,
+    .side_menu #wp-calendar caption,
+    .side_menu #wp-calendar th, 
+    .side_menu #wp-calendar td,
+    aside .widget #lang_sel_list li a,
+    aside .widget #lang_sel li a,
+    aside .widget #lang_sel_click li a,
+    section.side_menu #lang_sel_list li a,
+    section.side_menu #lang_sel li a,
+    section.side_menu #lang_sel_click li a,
+    footer #lang_sel_list li a,
+    footer #lang_sel li a,
+    footer #lang_sel_click li a,
+    footer #lang_sel_list.lang_sel_list_horizontal a,
+    footer #lang_sel_list.lang_sel_list_vertical a,
+    .side_menu #lang_sel_list.lang_sel_list_horizontal a,
+    .side_menu #lang_sel_list.lang_sel_list_vertical a,
+    #lang_sel_footer a{
+    	color: #000000;    }
+    .header_top #lang_sel > ul > li > a, 
+    .header_top #lang_sel_click > ul > li> a,
+    footer #lang_sel ul li a,
+    footer #lang_sel ul ul a,
+    footer #lang_sel_click ul li a,
+    footer #lang_sel_click ul ul a,
+    footer #lang_sel_click ul ul a span,
+    section.side_menu #lang_sel ul li a,
+    section.side_menu #lang_sel ul ul a,
+    section.side_menu #lang_sel ul ul a:visited,
+    section.side_menu #lang_sel_click > ul > li > a,
+    section.side_menu #lang_sel_click ul ul a,
+    section.side_menu #lang_sel_click ul ul a:visited{
+    	color: #000000 !important;    }
+    a:hover,p a:hover,
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,
+.q_tabs .tabs-nav li a:hover,
+.q_icon_with_title .icon_with_title_link:hover,
+.blog_holder article .post_description a:hover,
+.blog_holder.masonry article .post_info a:hover,
+.portfolio_social_holder a:hover,
+.latest_post_inner .post_infos a:hover{
+	color: #d22000;	}
+
+
+
+
+
+
+
+
+
+
+
+
+.google_map{
+	height: 750px;
+}
+
+
+	.footer_top_holder,	footer #lang_sel > ul > li > a,	footer #lang_sel_click > ul > li > a{
+		background-color: #f5b300;
+	}
+	footer #lang_sel ul ul a,footer #lang_sel_click ul ul a,footer #lang_sel ul ul a:visited,footer #lang_sel_click ul ul a:visited{
+		background-color: #f5b300 !important;
+	}
+	.footer_top,
+	.footer_top p,
+    .footer_top span,
+    .footer_top li,
+    .footer_top .textwidget,
+    .footer_top .widget_recent_entries>ul>li>span {
+		color: #000000;
+	}
+    .footer_top a,
+	.footer_top .q_social_icon_holder i.simple_social
+	{
+        color: #000000 !important;
+    }
+
+
+
+
+	.footer_top h5 {
+font-size: 16px;text-transform: uppercase;color: #000000	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+
+
+	.vertical_menu_area{
+		text-align:left;
+	}
+
+	nav.vertical_menu > ul > li > a{
+									}
+
+
+
+
+
+
+
+
+
+
+
+
+	.header_top .q_social_icon_holder i.simple_social,
+	.header_top .header-widget,
+	.header_top .header-widget.widget_nav_menu ul.menu>li>a,
+	.header_top .header-widget p,
+	.header_top .header-widget a,
+	.header_top .header-widget span {
+	     color: #dd9933;	}
+
+	.projects_holder article .portfolio_description .project_category {
+	color: ;	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

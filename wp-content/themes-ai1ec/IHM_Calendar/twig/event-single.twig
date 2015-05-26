@@ -1,0 +1,62 @@
+<div class="timely ai1ec-single-event
+	ai1ec-event-id-{{ post_id }}
+	{% if event.is_multiday %}ai1ec-multiday{% endif %}
+	{% if event.is_allday %}ai1ec-allday{% endif %}">
+
+<a id="ai1ec-event"></a>
+
+<div class="container_inner">
+
+	<div class="vc_row">
+
+		<div class="vc_col-sm-8">
+
+			<h1>{{ event_content.post_title }}</h1>
+
+			<span class="event_single_small_header">When</span>
+
+			<p class="event_time_location">{{ event | timespan | raw }}</p>
+
+		{% if location is not empty %}
+
+			<span class="event_single_small_header">Where</span>
+
+			<p class="event_time_location">{{ location | raw }}</p>
+		{% endif %}
+		
+			<p>{{ event_data.event_main_content[0] | raw }}</p>
+			{% if event_data.event_url[0] is not empty %}
+			<a class="event_link" href="{{ event_data.event_url[0] }}" target="_blank">Event Link</a>
+			{% endif %}
+
+		</div>
+
+		<div class="vc_col-sm-4">
+
+			<div class="event_social_holder">
+
+				<a title="Share on Facebook" href="#" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{event_content.post_title }}&amp;p[summary]=&amp;p[url]={{ event_link }}&amp;&p[images][0]=http://welcomeus.wpengine.com/wp-content/uploads/2015/04/Minneapolis_037_small.jpg', 'sharer', 'toolbar=0,status=0,width=620,height=280');"><i class="fa fa-facebook"></i></a>
+
+				<a href="#" title="Share on Twitter" onclick="popUp=window.open('http://twitter.com/home?status={{event_content.post_title }}++via+%40Welcome_us+%23IHM2015+%23ImmigrantHeritageMonth+{{ event_link }}', 'popupwindow', 'scrollbars=yes,width=800,height=400');popUp.focus();return false;"><i class="fa fa-twitter"></i></a>
+
+			</div>
+
+
+			<div class="ai1ec-map">
+				{{ map | raw }}
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+{% if map is empty %}
+	</div>{# /.ai1ec-event-details #}
+{% else %}
+		</div>{# /.ai1ec-col-sm-7 #}
+	</div>{# /.ai1ec-event-details.ai1ec-row #}
+{% endif %}
+
+</div>

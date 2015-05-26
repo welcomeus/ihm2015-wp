@@ -1,0 +1,52 @@
+/*=== Change background color and font family ===*/
+
+body {
+  background: #f4f4f4;
+}
+
+/*=== Adjust overall form padding ===*/
+
+#login {
+  padding: 4% 0 0;
+}
+ 
+/*=== Change Width and Height of Logo Image + Add Custom Image File ===*/
+.login h1 a {
+  background-image: url('login_logo.png');
+  width: 175px;
+  height: 113px;
+  background-size: 175px;
+  margin: 0 auto;
+}
+ 
+/*=== Add a few changes to the color and style of form itself ===*/
+
+.login form {
+  margin-top: 10px;
+}
+
+.login label {
+  color: #454545;
+  display: block;
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+ 
+.login #backtoblog a, .login #nav a {
+  color: #00A93B;
+}
+
+.wp-core-ui .button-primary {
+  background: #00A93B;
+  border: none;
+}
+
+.wp-core-ui .button-primary:hover {
+  background: #00A93B;
+  border: none;
+  opacity: .6;
+}
+
+button, input, select, textarea {
+  font-weight: normal;
+}

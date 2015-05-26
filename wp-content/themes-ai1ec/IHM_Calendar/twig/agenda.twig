@@ -1,0 +1,79 @@
+{{ navigation | raw }}
+
+<div class="ai1ec-agenda-view">
+	{% if dates is empty %}
+		<p class="ai1ec-no-results">
+			{{ text_upcoming_events }}
+		</p>
+		{% else %}
+		{% for date, date_info in dates %}
+			<div class="ai1ec-date
+			{% if date_info.today is not empty %}ai1ec-today{% endif %}">
+				<div class="ai1ec-date-events">
+					{% for category in date_info.events %}
+						{% for event in category %}
+							<div class="ai1ec-event
+							ai1ec-event-id-{{ event.post_id }}
+							ai1ec-event-instance-id-{{ event.instance_id }}
+							{% if event.is_allday %}ai1ec-allday{% endif %}
+								{% if expanded %}ai1ec-expanded{% endif %}">
+
+									<div class="ai1ec-new-event-header">
+
+										<div class="list_column_1">
+
+											<div class="List_View_Details">
+												<div class="ai1ec-event-time">
+													<p class="list_view_big_month">{{ date | date("F") }}</p> 
+													<p class="list_view_big_day">{{ date | day }}</p>
+												</div>
+											</div>
+
+											<div class="event_social_holder">
+
+												<a title="Share on Facebook" href="#" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]={{ event.filtered_title | raw }}&amp;p[summary]=&amp;p[url]={{ event.permalink | e('html_attr') }}&amp;&p[images][0]=http://welcomeus.wpengine.com/wp-content/uploads/2015/04/Minneapolis_037_small.jpg', 'sharer', 'toolbar=0,status=0,width=620,height=280');"><img src="http://welcome.us/wp-content/uploads/2015/04/IHM_Assets-02.png" /></a>
+
+												<a href="#" title="Share on Twitter" onclick="popUp=window.open('http://twitter.com/home?status={{ event.filtered_title | raw }}++via+%40Welcome_us+%23IHM2015+%23ImmigrantHeritageMonth+{{ event.permalink | e('html_attr') }}', 'popupwindow', 'scrollbars=yes,width=800,height=400');popUp.focus();return false;"><img src="http://welcome.us/wp-content/uploads/2015/04/IHM_Assets-04.png" /></a>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<div class="ai1ec-event-summary {% if expanded %}ai1ec-expanded{% endif %}">
+
+										<div class="ai1ec-event-description list_column_2">
+
+											<p class="event_top_details">{{ event.short_start_time }}</p>
+
+											<p class="event_top_details">{{ event.venue }}</p>
+
+											<h1 class="ai1ec-event-title">
+												<a href="{{ event.permalink | e('html_attr') }}">{{ event.filtered_title | raw }}</a>
+											</h1>
+
+											<div class="ai1ec-event-description-text">
+												
+												{% if event.venue is not empty %}
+											
+												{% endif %}
+												{% if event.address is not empty %}
+												
+												{% endif %}
+												<a class="event_details_link" href="{{ event.permalink | e('html_attr') }}">View Event Details</a>
+											</div>
+										</div>
+
+								</div>
+
+							</div>
+						{% endfor %} {# event in category #}
+					{% endfor %} {# category in date_info.events #}
+				</div>
+			</div>
+		{% endfor %} {# date, date_info in dates #}
+	{% endif %} {# dates is not empty #}
+</div>
+
+<div class="ai1ec-pull-left">{{ pagination_links | raw }}</div>
