@@ -248,10 +248,12 @@ if(isset($qode_options_proya['uncovering_footer']) && $qode_options_proya['uncov
 if ( $j(".home-logo-animation").length ){
 	console.log('home animation present');
   var $container = $j(".home-logo-animation")
+  var $spinner = $j(".home-logo-spinner")
   var $img = $container.children('img');
   var animatedSrc = $img.attr('anim-src');
 	$container.slideDown(200).delay(4000).fadeIn(100, function () {
     $img.attr('src', animatedSrc);
+    $spinner.hide();
     $container.delay(3000).fadeOut('slow');
   });
 }
