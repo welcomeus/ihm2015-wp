@@ -54,10 +54,10 @@ else { $paged = 1; }
 
 				<div class="ihm-home-hero-container" style="position: relative">
 
-					<div class="home-logo-animation" style="position: absolute; height: 100%; width: 100%; text-align: center; z-index: 2000; background: #fff; opacity: 1">
+					<!-- <div class="home-logo-animation" style="position: absolute; height: 100%; width: 100%; text-align: center; z-index: 2000; background: #fff; opacity: 1">
 						<img src="<?php echo get_template_directory_uri() ?>/img/ihm-frame1.gif" anim-src="<?php echo get_template_directory_uri() ?>/img/ihm-loop-hi.gif" style="width: 100%; height: auto; "/>
 						<div class="home-logo-spinner"><img src="<?php echo get_template_directory_uri() ?>/img/ajax-loader.gif" /></div>
-					</div>
+					</div> -->
 
 					<div id="IHM_Stories_Home">
 
