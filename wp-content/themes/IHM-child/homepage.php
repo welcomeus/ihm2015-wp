@@ -46,93 +46,85 @@ else { $paged = 1; }
 
 				<!-- IHM Loading Sprite -->
 
-				<!-- <div class="biggif_parent" style="border: 1px solid lime;">
+				<!-- <div class="biggif_parent">
 					<div class="biggif"></div>
 				</div> -->
 
 				<!-- Stories Featured Slider -->
 
-				<div class="ihm-home-hero-container" style="position: relative">
+				<div id="IHM_Stories_Home">
 
-					<!-- <div class="home-logo-animation" style="position: absolute; height: 100%; width: 100%; text-align: center; z-index: 2000; background: #fff; opacity: 1">
-						<img src="<?php echo get_template_directory_uri() ?>/img/ihm-frame1.gif" anim-src="<?php echo get_template_directory_uri() ?>/img/ihm-loop-hi.gif" style="width: 100%; height: auto; "/>
-						<div class="home-logo-spinner"><img src="<?php echo get_template_directory_uri() ?>/img/ajax-loader.gif" /></div>
-					</div> -->
+					<div id="IHM_Stories" class="flexslider">
 
-					<div id="IHM_Stories_Home">
+						<ul class="slides">
 
-						<div id="IHM_Stories" class="flexslider">
+							<!-- First Slide Content. Editted on the Homepage in the WP Backend -->
 
-							<ul class="slides">
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-								<!-- First Slide Content. Editted on the Homepage in the WP Backend -->
+							<li style="background: url('<?php the_field('homepage_slider_image') ; ?>');">
 
-								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								<span class="homepage_story_slider_image_overlay"></span>
 
-								<li style="background: url('<?php the_field('homepage_slider_image') ; ?>');">
+								<div class="homepage_first_slide_information fade-in">
+									<p><?php the_field('homepage_slider_text'); ?></p>
+								</div>
 
-									<span class="homepage_story_slider_image_overlay"></span>
+							</li>
 
-									<div class="homepage_first_slide_information fade-in">
-										<p><?php the_field('homepage_slider_text'); ?></p>
-									</div>
+							<?php endwhile; ?>
+							<?php endif; ?>
 
-								</li>
+							<!-- Loop through stories tagged as 'Homepage Slider' -->
 
-								<?php endwhile; ?>
-								<?php endif; ?>
+							<?php
+							$args1 = array( 'post_type' => 'portfolio_page', 'portfolio_category' => 'featured-slider', 'posts_per_page' => 3, 'orderby' => 'rand' );
+							$loop1 = new WP_Query( $args1 );
+							if ( $loop1->have_posts() ) : while ( $loop1->have_posts() ) : $loop1->the_post();
+							?>
 
-								<!-- Loop through stories tagged as 'Homepage Slider' -->
+								<?php if( have_rows('story_slides') ): ?>
 
-								<?php
-								$args1 = array( 'post_type' => 'portfolio_page', 'portfolio_category' => 'featured-slider', 'posts_per_page' => 3, 'orderby' => 'rand' );
-								$loop1 = new WP_Query( $args1 );
-								if ( $loop1->have_posts() ) : while ( $loop1->have_posts() ) : $loop1->the_post();
-								?>
+									<?php while ( have_rows('story_slides') ) : the_row(); ?>
 
-									<?php if( have_rows('story_slides') ): ?>
+										<li style="background: url('<?php the_sub_field('slide_image'); ?>');">
 
-										<?php while ( have_rows('story_slides') ) : the_row(); ?>
+									<?php break; ?>
 
-											<li style="background: url('<?php the_sub_field('slide_image'); ?>');">
-
-										<?php break; ?>
-
-										<?php endwhile; ?>
-
-									<?php endif; ?>
-
-											<a href="<?php the_permalink(); ?>">
-
-												<span class="homepage_story_slider_image_overlay"></span>
-
-												<div class="featured_slide_caption">
-													<p class="featured_slide_story_name"><?php the_title(); ?></p>
-													<p class="featured_slide_story_location"><?php the_field('story_location', $post->ID) ?></p>
-												</div>
-
-											</a>
-
-											<div class="portfolio_like"><?php if( function_exists('qode_like') ) qode_like(); ?></div>
-
-											</li>
-
-
-								<?php endwhile; else: ?>
+									<?php endwhile; ?>
 
 								<?php endif; ?>
 
-							</ul>
+										<a href="<?php the_permalink(); ?>">
 
-							<a href="#first_section_homepage" class="slide_anchor_button anchor">
+											<span class="homepage_story_slider_image_overlay"></span>
 
-								<img class="slide_to_arrow" src="http://welcome.us/wp-content/uploads/2015/05/Assets-19.png" />
+											<div class="featured_slide_caption">
+												<p class="featured_slide_story_name"><?php the_title(); ?></p>
+												<p class="featured_slide_story_location"><?php the_field('story_location', $post->ID) ?></p>
+											</div>
 
-							</a>
+										</a>
 
-						</div>
+										<div class="portfolio_like"><?php if( function_exists('qode_like') ) qode_like(); ?></div>
+
+										</li>
+
+
+							<?php endwhile; else: ?>
+
+							<?php endif; ?>
+
+						</ul>
+
+						<a href="#first_section_homepage" class="slide_anchor_button anchor">
+
+							<img class="slide_to_arrow" src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/Assets-19.png'); ?>" />
+
+						</a>
 
 					</div>
+
 				</div>
 
 				<div class="container_inner">
@@ -238,22 +230,22 @@ else { $paged = 1; }
 						<div class="vc_col-sm-3">
 							<div class="follow_cta_block">
 				           		<div class="cta_block_image">
-				           			<img src="http://welcome.us/wp-content/uploads/2015/04/follow_us_block.png" />
+				           			<img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/04/follow_us_block.png'); ?>" />
 				           		</div>
 				           		<div class="cta_block_text">
 					           		<p>Follow Us</p>
 					           		<ul class="social_holder">
 					           			<li>
-					           				<a href="https://www.facebook.com/welcomeus" target="_blank"><img src="http://welcome.us/wp-content/uploads/2015/05/IHM_Assets_large-02.png" /></a>
+					           				<a href="https://www.facebook.com/welcomeus" target="_blank"><img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/IHM_Assets_large-02.png'); ?>" /></a>
 					           			</li>
 					           			<li>
-					           				<a href="https://instagram.com/welcome_us/" target="_blank"><img src="http://welcome.us/wp-content/uploads/2015/05/IHM_Assets_large-03.png" /></a>
+					           				<a href="https://instagram.com/welcome_us/" target="_blank"><img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/IHM_Assets_large-03.png'); ?>" /></a>
 					           			</li>
 					           			<li>
-					           				<a href="https://twitter.com/welcome_us" target="_blank"><img src="http://welcome.us/wp-content/uploads/2015/05/IHM_Assets_large-04.png" /></a>
+					           				<a href="https://twitter.com/welcome_us" target="_blank"><img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/IHM_Assets_large-04.png'); ?>" /></a>
 					           			</li>
 					           			<li>
-					           				<a href="https://www.youtube.com/user/WelcomeIHM" target="_blank"><img src="http://welcome.us/wp-content/uploads/2015/05/IHM_Assets_large-05.png" /></a>
+					           				<a href="https://www.youtube.com/user/WelcomeIHM" target="_blank"><img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/IHM_Assets_large-05.png'); ?>" /></a>
 					           			</li>
 					           		</ul>
 					           	</div>
@@ -324,9 +316,9 @@ else { $paged = 1; }
 
 						<div class="vc_col-sm-4">
 							<div class="newsletter_cta_block">
-					           	<a href="http://welcome.us/IHM/sign-up/" class="IHM_popup">
+					           	<a href="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/IHM/sign-up/'); ?>" class="IHM_popup">
 					           		<div class="cta_block_image">
-					           			<img src="http://welcome.us/wp-content/uploads/2015/04/newsletter_block.png" />
+					           			<img src="<?php echo wp_make_link_relative('http://welcomeus.wpengine.com/wp-content/uploads/2015/04/newsletter_block.png'); ?>" />
 					           		</div>
 					           		<div class="cta_block_text">
 						           		<p>Sign Up For</p>
@@ -435,7 +427,7 @@ else { $paged = 1; }
 							<!-- Tint Social Feed Featured -->
 
 							<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e4.js"></script>
-							<div class="a5b5e4" data-id="welcomeus" data-columns="" data-expand="true" data-query="+featured"   data-infinitescroll="true" style="height:500px;width:100%;"></div>
+							<div class="a5b5e4" data-id="welcomeus" data-columns="" data-expand="false" data-query=""   data-infinitescroll="true" style="height:500px;width:100%;"></div>
 
 						</div>
 
@@ -466,11 +458,11 @@ else { $paged = 1; }
 							?>
 
 							<div class="vc_col-sm-3">
-
 								<div class="event_thumb">
 									<a href="<?php the_permalink(); ?>">
 					           			<span class="event_thumb_image">
-							       			<img src="<?php the_field('event_featured_image'); ?>" />
+        	    <img src="http://welcome.us/wp-content/uploads/2015/04/IHM_Home_logo_large.png" />
+
 								       		<div class="event_thumb_information">
 									           	<p class="event_thumb_date"><?php the_field('short_event_date', $post->ID); ?></p>
 									           	<hr/>
@@ -502,7 +494,6 @@ else { $paged = 1; }
 							</div>
 
 						</div>
-
 					</div>
 
 				</div>
