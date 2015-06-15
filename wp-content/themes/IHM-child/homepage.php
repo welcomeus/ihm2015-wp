@@ -461,9 +461,9 @@ else { $paged = 1; }
 								<div class="event_thumb">
 									<a href="<?php the_permalink(); ?>">
 										<?php
-											$img = the_field('event_featured_image');
+											$img = get_field('event_featured_image');
 											if (empty($img)) {
-												$img = 'wp-content/uploads/2015/04/IHM_Home_logo_large.png';
+												$img = get_template_directory() . 'img/event-bg.png';
 											}
 										?>
 					           			<span class="event_thumb_image">
