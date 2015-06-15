@@ -460,9 +460,14 @@ else { $paged = 1; }
 							<div class="vc_col-sm-3">
 								<div class="event_thumb">
 									<a href="<?php the_permalink(); ?>">
+										<?php
+											$img = the_field('event_featured_image');
+											if (empty($img)) {
+												$img = 'wp-content/uploads/2015/04/IHM_Home_logo_large.png';
+											}
+										?>
 					           			<span class="event_thumb_image">
-        	    <img src="http://welcome.us/wp-content/uploads/2015/04/IHM_Home_logo_large.png" />
-
+        	    							<img src="<?php echo $img ?>" />
 								       		<div class="event_thumb_information">
 									           	<p class="event_thumb_date"><?php the_field('short_event_date', $post->ID); ?></p>
 									           	<hr/>
