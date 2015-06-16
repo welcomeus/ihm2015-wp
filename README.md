@@ -10,3 +10,7 @@ Add your keys via wpengine, then add the following remotes:
 * `git remote add staging git@git.wpengine.com:staging/welcomeus.git`
 
 Then deploy from master to either remote.
+
+## Editing the theme
+
+* CSS file is removed from Quode, and stored in `themes/IHM/css/custom_css.css`.

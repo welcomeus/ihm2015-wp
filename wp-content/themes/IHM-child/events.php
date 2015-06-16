@@ -1,12 +1,12 @@
-<?php 
+<?php
 /*
 Template Name: Events
-*/ 
+*/
 ?>
-<?php 
+<?php
 global $wp_query;
 $id = $wp_query->get_queried_object_id();
-$sidebar = get_post_meta($id, "qode_show-sidebar", true);  
+$sidebar = get_post_meta($id, "qode_show-sidebar", true);
 
 $enable_page_comments = false;
 if(get_post_meta($id, "qode_enable-page-comments", true) == 'yes') {
@@ -47,11 +47,17 @@ else { $paged = 1; }
 			<!-- Stories Featured Slider -->
 
 			<div id="IHM_Stories" class="flexslider">
-									
+
 				<ul class="slides">
 
 					<?php
-					$args1 = array( 'post_type' => 'ai1ec_event', 'posts_per_page' => 4, 'meta_key' => 'full_event_date', 'orderby' => 'meta_value_num', 'order' => 'ASC');
+					$args1 = array(
+						'post_type' => 'ai1ec_event',
+						'posts_per_page' => 4,
+						'meta_key' => 'full_event_date',
+						'orderby' => 'meta_value_num',
+						'order' => 'ASC'
+					);
 					$loop1 = new WP_Query( $args1 );
 					if ( $loop1->have_posts() ) : while ( $loop1->have_posts() ) : $loop1->the_post();
 					?>
@@ -60,7 +66,14 @@ else { $paged = 1; }
 
 						<a href="<?php the_permalink(); ?>">
 							<span class="story_slider_image_overlay">
-								<?php the_post_thumbnail(); ?>
+								<?php
+									if (has_post_thumbnail()) {
+										$img = get_the_post_thumbnail( $post_id );
+									} else {
+										$img = '<img src="'. get_template_directory_uri() . '/img/event-bg.png">';
+									}
+									echo $img;
+							    ?>
 							</span>
 							<div class="event_slider_information">
 								<p class="event_slider_date"><?php the_field('short_event_date', $post->ID); ?></p>
@@ -73,7 +86,7 @@ else { $paged = 1; }
 					</li>
 
 					<?php endwhile; else: ?>
-					
+
 					<?php endif; ?>
 
 				</ul>
@@ -82,7 +95,7 @@ else { $paged = 1; }
 
 			<div class="container_inner">
 
-			<?php if (have_posts()) : 
+			<?php if (have_posts()) :
 				while (have_posts()) : the_post(); ?>
 
 					<?php the_content(); ?>
@@ -93,5 +106,5 @@ else { $paged = 1; }
 			</div>
 
 		</div>
-	</div>	
+	</div>
 	<?php get_footer(); ?>
