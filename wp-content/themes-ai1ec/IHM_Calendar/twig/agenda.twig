@@ -1,5 +1,6 @@
 {{ navigation | raw }}
 
+<h2>Just a test</h2>
 <div class="ai1ec-agenda-view">
 	{% if dates is empty %}
 		<p class="ai1ec-no-results">
@@ -24,7 +25,7 @@
 
 											<div class="List_View_Details">
 												<div class="ai1ec-event-time">
-													<p class="list_view_big_month">{{ date | date("F") }}</p> 
+													<p class="list_view_big_month">{{ date | date("F") }}</p>
 													<p class="list_view_big_day">{{ date | day }}</p>
 												</div>
 											</div>
@@ -47,6 +48,8 @@
 
 											<p class="event_top_details">{{ event.short_start_time }}</p>
 
+											<p class="event_top_details">{{ event.city }}</p>
+
 											<p class="event_top_details">{{ event.venue }}</p>
 
 											<h1 class="ai1ec-event-title">
@@ -54,12 +57,12 @@
 											</h1>
 
 											<div class="ai1ec-event-description-text">
-												
+
 												{% if event.venue is not empty %}
-											
+
 												{% endif %}
 												{% if event.address is not empty %}
-												
+
 												{% endif %}
 												<a class="event_details_link" href="{{ event.permalink | e('html_attr') }}">View Event Details</a>
 											</div>
