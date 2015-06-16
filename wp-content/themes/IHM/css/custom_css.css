@@ -1,7 +1,8 @@
-
-
+body {
+    border-top: 10px sold lime;
+}
 /*========================
-GRID ADJUSTMENTS 
+GRID ADJUSTMENTS
 ========================*/
 
 .container_inner {
@@ -60,7 +61,7 @@ span.homepage_story_slider_image_overlay {
 #IHM_Stories.flexslider {
   margin: 0px;
   min-height: 100vh;
- -webkit-transition: all .5s ease-in;  
+ -webkit-transition: all .5s ease-in;
   -moz-transition: all .5s ease-in;
   transition: all .5s ease-in;
 }
@@ -132,37 +133,37 @@ span.slide_story_location {
 }
 
 .flex-direction-nav a.flex-prev {
-  background: url('http://welcome.us/wp-content/uploads/2015/05/nav_arrow_left.png');
+  background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/nav_arrow_left.png');
   background-size: cover;
   border: none;
 }
 
 .flex-direction-nav a.flex-next {
-  background: url('http://welcome.us/wp-content/uploads/2015/05/nav_arrow_right.png');
+  background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/nav_arrow_right.png');
   background-size: cover;
   border: none;
 }
 
 .flex-direction-nav a.flex-prev:hover {
-  background: url('http://welcome.us/wp-content/uploads/2015/05/Arrows-16.png');
+  background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/Arrows-16.png');
   background-color: transparent !important;
   background-size: cover;
 }
 
 .flex-direction-nav a.flex-next:hover {
-  background: url('http://welcome.us/wp-content/uploads/2015/05/Arrows-20.png');
+  background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/Arrows-20.png');
   background-color: transparent !important;
   background-size: cover;
 }
 
 @media all and (max-width: 435px) {
 .flex-direction-nav a.flex-prev:hover {
-  background: url('http://welcome.us/wp-content/uploads/2015/05/nav_arrow_left.png');
+  background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/nav_arrow_left.png');
 background-size: cover;
 }
 
 .flex-direction-nav a.flex-next:hover {
-   background: url('http://welcome.us/wp-content/uploads/2015/05/nav_arrow_right.png');
+   background: url('http://welcomeus.staging.wpengine.com/wp-content/uploads/2015/05/nav_arrow_right.png');
 background-size: cover;
 }
 }
@@ -403,7 +404,7 @@ display: block !important;
 }
 
 /*=====================================
-RESPONSIVE GRID ADJUSTMENTS TO COLUMNS 
+RESPONSIVE GRID ADJUSTMENTS TO COLUMNS
 ======================================*/
 
 @media all and (min-width: 736px) and (max-width: 960px) {
@@ -434,7 +435,7 @@ RESPONSIVE GRID ADJUSTMENTS TO COLUMNS
 }
 
 /*========================
-HOMEPAGE 
+HOMEPAGE
 ========================*/
 
 /*=== Opening Gif ===*/
@@ -443,7 +444,7 @@ img.anim-img {
        position: absolute;
        z-index: 1001;
        width:100%;
-} 
+}
 
 .anim-img-mobile {
        visibility: hidden;
@@ -627,17 +628,17 @@ p.featured_slide_story_location {
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
- 
+
 .fade-in {
-    opacity:0; 
+    opacity:0;
     -webkit-animation:fadeIn ease-in 1;
     -moz-animation:fadeIn ease-in 1;
     animation:fadeIn ease-in 1;
- 
+
     -webkit-animation-fill-mode:forwards;
     -moz-animation-fill-mode:forwards;
     animation-fill-mode:forwards;
- 
+
     -webkit-animation-duration:2s;
     -moz-animation-duration:2s;
     animation-duration:2s;
@@ -873,11 +874,15 @@ background: #00A93B !important;
   height: 100%;
 }
 
+.event_thumb_image img {
+    display: block;
+}
+
 .event_thumb_image:before {
   content: "";
   display: block;
   width: 100%;
-  height: 96%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -2072,7 +2077,7 @@ EVENTS
   width: 100%;
   margin: 0 auto;
   text-align: center;
-} 
+}
 
 p.event_slider_date {
   font-weight: 300;
@@ -2681,16 +2686,16 @@ THE BIG GIF
   left: 50%;
   top: -10%;
   background: url('http://welcomeus.wpengine.com/wp-content/uploads/2015/05/IHM_GIF_870_revised.jpg') left center;
-  animation-name: play; 
-  animation-delay: 5s; 
-  animation-duration: 3s; 
-  animation-timing-function: steps(9); 
+  animation-name: play;
+  animation-delay: 5s;
+  animation-duration: 3s;
+  animation-timing-function: steps(9);
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 5s; 
-  -webkit-animation-name: play; 
-  -webkit-animation-duration: 3s; 
-  -webkit-animation-timing-function: steps(9); 
+  -webkit-animation-delay: 5s;
+  -webkit-animation-name: play;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: steps(9);
   -webkit-animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
 }
@@ -2708,4 +2713,3 @@ THE BIG GIF
 .page-id-500 p, .page-id-498 p {
   margin: 20px 0px;
 }
- 

@@ -463,7 +463,7 @@ else { $paged = 1; }
 										<?php
 											$img = get_field('event_featured_image');
 											if (empty($img)) {
-												$img = get_template_directory() . 'img/event-bg.png';
+												$img = get_template_directory_uri() . '/img/event-bg.png';
 											}
 										?>
 					           			<span class="event_thumb_image">

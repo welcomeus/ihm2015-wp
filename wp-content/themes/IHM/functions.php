@@ -142,7 +142,7 @@ if (!function_exists('qode_styles')) {
             $responsiveness = $qode_options_proya['responsiveness'];
         if ($responsiveness != "no"):
             wp_enqueue_style("responsive", QODE_ROOT . "/css/responsive.min.css");
-            
+
 			if (file_exists(dirname(__FILE__) ."/css/style_dynamic_responsive.css") && qode_is_css_folder_writable() && !is_multisite())
             	wp_enqueue_style("style_dynamic_responsive", QODE_ROOT . "/css/style_dynamic_responsive.css", array(), filemtime(dirname(__FILE__) ."/css/style_dynamic_responsive.css"));
             else
@@ -177,11 +177,13 @@ if (!function_exists('qode_styles')) {
 		if(is_rtl()) {
 			wp_enqueue_style('qode-rtl', QODE_ROOT.'/rtl.css');
 		}
-            
-		if (file_exists(dirname(__FILE__) ."/css/custom_css.css") && qode_is_css_folder_writable() && !is_multisite())
-        	wp_enqueue_style("custom_css", QODE_ROOT . "/css/custom_css.css", array(), filemtime(dirname(__FILE__) ."/css/custom_css.css"));
-       	else
-        	wp_enqueue_style("custom_css", QODE_ROOT . "/css/custom_css.php");
+
+		// if (file_exists(dirname(__FILE__) ."/css/custom_css.css") && qode_is_css_folder_writable() && !is_multisite())
+        // 	wp_enqueue_style("custom_css", QODE_ROOT . "/css/custom_css.css", array(), filemtime(dirname(__FILE__) ."/css/custom_css.css"));
+     //   	else
+        // 	wp_enqueue_style("custom_css", QODE_ROOT . "/css/custom_css.php");
+
+		wp_enqueue_style("custom_css", QODE_ROOT . "/css/custom_css.css", array(), filemtime(dirname(__FILE__) ."/css/custom_css.css"));
     }
 
 	add_action('wp_enqueue_scripts', 'qode_styles');
@@ -322,13 +324,13 @@ if (!function_exists('qode_scripts')) {
         if((isset($qode_options_proya['enable_google_map']) && $qode_options_proya['enable_google_map'] == "yes") || qode_is_ajax_enabled() || qode_has_google_map_shortcode()) :
             wp_enqueue_script("google_map_api", "https://maps.googleapis.com/maps/api/js?sensor=false",array(),false,true);
         endif;
-        
+
 		if (file_exists(dirname(__FILE__) ."/js/default_dynamic.js") && qode_is_js_folder_writable() && !is_multisite()) {
 			wp_enqueue_script("default_dynamic", QODE_ROOT."/js/default_dynamic.js",array(), filemtime(dirname(__FILE__) ."/js/default_dynamic.js"),true);
 		} else {
 			wp_enqueue_script("default_dynamic", QODE_ROOT."/js/default_dynamic.php",array(),false,true);
 		}
-        	
+
         wp_enqueue_script("default", QODE_ROOT."/js/default.min.js",array(),false,true);
 
 		if (file_exists(dirname(__FILE__) ."/js/custom_js.js") && qode_is_js_folder_writable() && !is_multisite()) {
@@ -336,7 +338,7 @@ if (!function_exists('qode_scripts')) {
 		} else {
 			wp_enqueue_script("custom_js", QODE_ROOT."/js/custom_js.php",array(),false,true);
 		}
-        	
+
         global $wp_scripts;
         $wp_scripts->add_data('comment-reply', 'group', 1 );
         if ( is_singular() ) wp_enqueue_script( "comment-reply");
@@ -559,12 +561,12 @@ if (!function_exists('vertical_menu_class')) {
 	function vertical_menu_class($classes) {
 		global $qode_options_proya;
         global $wp_query;
-		
+
 		$paspartu = false;
 		if(isset($qode_options_proya['paspartu']) && $qode_options_proya['paspartu'] == 'yes'){
 			$paspartu = true;
 		}
-		
+
 		if(isset($qode_options_proya['vertical_area']) && $qode_options_proya['vertical_area'] =='yes' && $paspartu == false) {
             $classes[] = 'vertical_menu_enabled';
 
@@ -996,9 +998,9 @@ if(!function_exists('qode_addslashes')) {
 	 * @return string escaped string
 	 */
 	function qode_addslashes($str) {
-		
+
 		$str = addslashes($str);
-		
+
 		return $str;
 	}
 }
@@ -2074,7 +2076,7 @@ if(!function_exists('qode_maintenance_mode')) {
      */
     function qode_maintenance_mode() {
         global $qode_options_proya;
-        
+
         $protocol = is_ssl() ? "https://" : "http://";
         if(isset($qode_options_proya['qode_maintenance_mode']) && $qode_options_proya['qode_maintenance_mode'] == 'yes' && isset($qode_options_proya['qode_maintenance_page']) && $qode_options_proya['qode_maintenance_page'] != ""
         && !in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'))
