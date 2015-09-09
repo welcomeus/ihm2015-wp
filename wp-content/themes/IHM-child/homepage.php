@@ -418,20 +418,18 @@ else { $paged = 1; }
 
 					</div>
 
-					<div class="vc_row">
+					<!--<div class="vc_row">
 
 						<div class="vc_col-lg-12">
 
 							<h1 class="homepage_header">What's your story? <a href="https://instagram.com/explore/tags/immigrantheritagemonth/" target="_blank">#ImmigrantHeritageMonth</a></h1>
-
-							<!-- Tint Social Feed Featured -->
 
 							<script async src="https://d36hc0p18k1aoc.cloudfront.net/pages/a5b5e4.js"></script>
 							<div class="a5b5e4" data-id="welcomeus" data-columns="" data-expand="false" data-query=""   data-infinitescroll="true" style="height:500px;width:100%;"></div>
 
 						</div>
 
-					</div>
+					</div>-->
 
 					<!-- Events -->
 
