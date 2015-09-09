@@ -41,16 +41,17 @@ META-BOX: STORAGE -->
 				</tr>
 				<tr>
 					<td colspan="4">
-						<p class="description">
+						<!-- <p class="description">
 							<?php _e("All packages including the archive, installer and SQL script are stored in the location above. ", 'wpduplicator'); ?>
 							<br/>
-						<small>
-							<?php _e("Dropbox, FTP and other multiple storage options available in ", 'wpduplicator'); ?>
-							<a href="http://duplicatorpro.com/?from_free_storage" target="_blank">
-								<?php _e("Duplicator Pro", 'wpduplicator'); ?>
-							</a>
-						</small>
-						</p>
+                        </p>-->
+						<p style="font-size:12px;">                          
+                            <i class="fa fa-dropbox"></i>
+                            <span style="font-style:italic; ">
+							<?php echo sprintf(__('%1$s, %2$s, and other storage options available in', 'wpduplicator'), 'Dropbox', 'FTP'); ?>
+                            <a href="http://snapcreek.com/duplicator/?free-storage" target="_blank">Duplicator Pro</a>
+                            </span>
+                        </p>                            
 					</td>
 				</tr>
 			</tbody>
@@ -111,6 +112,11 @@ META-BOX: STORAGE -->
                         <?php _e("The directory paths and extensions above will be be excluded from the archive file if enabled is checked.", 'wpduplicator'); ?> <br/>
                         <?php _e("Use the full path for directories and semicolons to separate all items.", 'wpduplicator'); ?>
                     </div>
+					<br/>
+					<span style="font-style:italic; font-size:12px ">
+						<?php echo sprintf(DUP_Util::__('%1$s, are available in'), 'Individual file filters'); ?>
+						<a href="http://snapcreek.com/duplicator/?free-file-filters" target="_blank">Duplicator Pro</a>
+					</span>
                 </div>
             </div>
 
@@ -178,7 +184,7 @@ META-BOX: STORAGE -->
     </div>			
 
     <div class="dup-box-panel" id="dup-pack-installer-panel" style="<?php echo $ui_css_installer ?>">
-        <div class="dup-installer-header-1"><?php echo _e('STEP 1 - INPUTS'); ?></div><br/>
+        <div class="dup-installer-header-1"><?php echo _e('STEP 1 - INPUTS', 'wpduplicator'); ?></div><br/>
         <table class="dup-installer-tbl">
             <tr>
                 <td colspan="2"><div class="dup-installer-header-2"><?php _e("MySQL Server", 'wpduplicator') ?></div></td>
@@ -186,6 +192,10 @@ META-BOX: STORAGE -->
             <tr>
                 <td style="width:130px"><?php _e("Host", 'wpduplicator') ?></td>
                 <td><input type="text" name="dbhost" id="dbhost" value="<?php echo $Package->Installer->OptsDBHost ?>"  maxlength="200" placeholder="localhost"/></td>
+            </tr>
+			<tr>
+                <td style="width:130px"><?php _e("Host Port", 'wpduplicator') ?></td>
+                <td><input type="text" name="dbport" id="dbport" value="<?php echo $Package->Installer->OptsDBPort ?>"  maxlength="200" placeholder="3306"/></td>
             </tr>
             <tr>
                 <td><?php _e("Database", 'wpduplicator') ?></td>
@@ -228,7 +238,7 @@ META-BOX: STORAGE -->
             </tr>
         </table><br />
 
-        <div class="dup-installer-header-1"><?php echo _e('STEP 2 - INPUTS'); ?></div>
+        <div class="dup-installer-header-1"><?php echo _e('STEP 2 - INPUTS', 'wpduplicator'); ?></div>
 
         <table class="dup-installer-tbl">
             <tr>
